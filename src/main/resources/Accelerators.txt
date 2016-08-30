@@ -1,0 +1,22 @@
+//http://www.cnblogs.com/likwo/p/3750799.html 中英文对照
+1.转大小写      command+shift+u
+2.自动补全      command+j
+3.撤销/恢复     ctrl+z   ctrl+shift+z
+4.选中         shift+alt+左右箭头
+5.行选中        shift+command+左右箭头
+6.移动一个单词   alt+左右箭头
+7.移动到行首尾   command+左右箭头
+8.手动导包      alt+enter    自动导包 alt+ctrl+o
+9.split new   ctrl+enter
+10.参数提示     command+p
+11.模板        ctrl+n
+12.上下移动     ctrl+shift+上下   整个方法
+12.上下移动     alt+shift+上下    一行
+14.查看调用处   command+b
+15.查看实现处   command+shift+b
+16.下一个方法   ctrl+上下
+17.快速查看文档  ctrl+j
+18.代码自动补全  ctrl+空格
+19.期待类型自动补签 ctrl+shift+空格
+20.之前的ctrl+1  alt+enter
+21.生成setget   command+n
