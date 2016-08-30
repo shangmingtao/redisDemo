@@ -41,7 +41,7 @@ public class SingleCore {
     }
 
 
-//         .    many methods
+//         .   1 many methods
 //         .
 //         .
 //         .
