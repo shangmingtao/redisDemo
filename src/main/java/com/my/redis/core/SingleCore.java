@@ -552,5 +552,6 @@ public class SingleCore {
         System.out.println("zrevrank:"+jedis.zrevrank("zset","e"));
         System.out.println(jedis.zrangeByScore("zset",10,10000,0,3));
         //offset 从第几个开始   后边参数:取几个
+        //1111
     }
 }
