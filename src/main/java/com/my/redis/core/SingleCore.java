@@ -332,7 +332,7 @@ public class SingleCore {
     }
 
     /*
-    根据分值查询
+   		根据分值正序排序 , 根据下标取 
      */
     public Set<String> zrange(String key , Long start , Long stop) {
         Jedis jedis = null;
@@ -346,6 +346,56 @@ public class SingleCore {
             redisDateSource.returnResource(jedis);
         }
     }
+    
+    /*
+		根据分值倒序排序 , 根据下标取 
+	 */
+	public Set<String> zrevrange(String key , Long start , Long stop) {
+	    Jedis jedis = null;
+	    try {
+	        jedis = redisDateSource.getRedisClientForSingleServer();
+	        return jedis.zrevrange(key , start , stop);
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        return null;
+	    } finally {
+	        redisDateSource.returnResource(jedis);
+	    }
+	}
+    
+    /*
+    	根据分值正序排序 , 根据分值范围取
+     */
+    public Set<String> zrangeByScore(String key , Double min , Double max) {
+        Jedis jedis = null;
+        try {
+            jedis = redisDateSource.getRedisClientForSingleServer();
+            return jedis.zrangeByScore(key , min , max);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            redisDateSource.returnResource(jedis);
+        }
+    }
+    
+    /*
+	根据分值正序排序 , 根据分值范围取
+	 */
+	public Set<String> zrevrangeByScore(String key , Double min , Double max) {
+	    Jedis jedis = null;
+	    try {
+	        jedis = redisDateSource.getRedisClientForSingleServer();
+	        return jedis.zrevrangeByScore(key , min , max);
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        return null;
+	    } finally {
+	        redisDateSource.returnResource(jedis);
+	    }
+	}
+    
+    
 
 
 
@@ -460,7 +510,7 @@ public class SingleCore {
      count = 0: 移除所有值为 value 的元素。
      count -2 从尾往头移除两个
       */
-    public Long LREM(String key , int count , String value) {
+    public Long lrem(String key , int count , String value) {
         Jedis jedis = null;
         try {
             jedis = redisDateSource.getRedisClientForSingleServer();
